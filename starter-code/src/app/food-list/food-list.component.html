@@ -1,3 +1,16 @@
-<p>
-  food-list works!
-</p>
+<h3>This is the food list.</h3>
+
+<h2>Search for food:</h2>
+
+<input placeholder="Search" type="text" [(ngModel)]="pattern">
+<section class="foodBlocks">
+<div class="foodItem" *ngFor="let oneFood of food | search:'name':pattern">
+
+  <img [src]="oneFood.image">
+
+  <h4>{{oneFood.name}} </h4>
+
+  <p> Calories: {{oneFood.calories}} </p>
+
+  <p> Quantity: {{oneFood.quantity}} </p>
+</div>
